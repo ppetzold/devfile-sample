@@ -56,6 +56,11 @@ app.get('/', (req, res) => {
   res.send('Hello from Node.js Starter Application!');
 });
 
+app.get('/headers', (req, res) => {
+      req.log.info(req.headers);
+    res.send(req.headers);
+});
+
 app.get('*', (req, res) => {
   res.status(404).send("Not Found");
 });
